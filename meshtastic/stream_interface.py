@@ -93,7 +93,7 @@ class StreamInterface(MeshInterface):
         self._startConfig()
 
         if not self.noProto:  # Wait for the db download if using the protocol
-            self._waitConnected()
+            self._waitConnected(timeout=300.0)
 
     def _disconnected(self) -> None:
         """We override the superclass implementation to close our port"""
